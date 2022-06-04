@@ -1,0 +1,1584 @@
+focus_tree = {
+	id = bav
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = BAV
+		}
+	}
+	#Focus for The Bavarian Industry
+	focus = {
+		id = BAV_the_bavarian_industry
+		icon = GFX_goal_continuous_increase_nu
+		x = 8
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_timed_idea= { 
+idea = bav_reingnited_the_economy
+days = 365
+}
+remove_ideas=bav_shortly_released
+
+		}
+	}
+
+	#Focus for Focus on the Civilian Industry
+	focus = {
+		id = BAV_focus_on_the_civilian_industry
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_bavarian_industry }
+		mutually_exclusive = {}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+		add_ideas = bav_focus_on_civ
+		}
+	}
+
+	#Focus for Firepower kills
+	focus = {
+		id = BAV_firepower_kills
+		icon = GFX_goal_generic_occupy_start_war
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_fortify_the_german_borders }
+		mutually_exclusive = { focus = BAV_tactial_efforts }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= bav_firepower_kills
+		}
+	}
+
+	#Focus for Develope the Bavarian Army
+	focus = {
+		id = BAV_develope_the_bavarian_army
+		icon = GFX_goal_generic_army_tanks
+		x = 21
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_offensive_war }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+					add_timed_idea= { 
+idea = bav_develop_army
+days = 100
+}
+		}
+	}
+
+	#Focus for Defensive War
+	focus = {
+		id = BAV_defensive_war
+		icon = GFX_goal_generic_defence
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_focus_on_the_military_industry }
+		mutually_exclusive = { focus = BAV_offensive_war }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_ideas= bav_defense_war
+		}
+	}
+
+	#Focus for Offensive War
+	focus = {
+		id = BAV_offensive_war
+		icon = GFX_goal_generic_major_war
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_focus_on_the_military_industry }
+		mutually_exclusive = { focus = BAV_defensive_war }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= bav_offense_war
+		}
+	}
+
+	#Focus for Fortify the German Borders
+	focus = {
+		id = BAV_fortify_the_german_borders
+		icon = GFX_goal_generic_fortify_city
+		x = 13
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_defensive_war }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			54 = {
+				add_building_construction = {
+				type = bunker
+				province = 11404
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3474
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6421
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 13116
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11417
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6594
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9557
+				level = 3
+			}
+			add_building_construction = {
+				type = bunker
+				province = 1529
+				level = 3
+			}
+		} 
+		52 = {
+		add_building_construction = {
+				type = bunker
+				province =  6540
+				level = 3
+			}
+		add_building_construction = {
+				type = bunker
+				province = 708
+				level = 3
+			}
+		add_building_construction = {
+				type = bunker
+				province = 9666
+				level = 3
+			}
+		add_building_construction = {
+				type = bunker
+				province = 11638
+				level = 3
+			}
+		}
+	}
+}
+
+	#Focus for Focus on the Military Industry
+	focus = {
+		id = BAV_focus_on_the_military_industry
+		icon = GFX_goal_generic_army_artillery2
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_bavarian_industry }
+		mutually_exclusive = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_ideas= bav_focus_on_mil
+			army_experience = 30
+		}
+	}
+		#Focus for Invite our Austrian Brothers
+	focus = {
+		id = BAV_invite_our_austrian_brothers
+		icon = GFX_goal_tripartite_pact
+		x = 4
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_european_market_congress }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+		AUS = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Swiss Membership
+	focus = {
+		id = BAV_swiss_membership
+		icon = GFX_goal_generic_national_unity
+		x = 6
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_european_market_congress }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+				completion_reward = {
+	    SWI = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Czech Membership
+	focus = {
+		id = BAV_czech_membership
+		icon = GFX_goal_generic_dangerous_deal
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_european_market_congress }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+				completion_reward = {
+		CZE = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Western Expansion
+	focus = {
+		id = BAV_western_expansion
+		icon = GFX_focus_generic_vichy_france_triumphant_focus
+		x = 2
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_european_market_congress }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 4
+		}		
+		completion_reward = {
+		FRA = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Hungarian Invite
+	focus = {
+		id = BAV_hungarian_invite
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 4
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_invite_our_austrian_brothers }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+				completion_reward = {
+		HUN = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Yugoslavian Memberschip
+	focus = {
+		id = BAV_yugoslavian_memberschip
+		icon = GFX_focus_invite_yugoslavia
+		x = 8
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_czech_membership }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 4
+		}
+				completion_reward = {
+	     YUG = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Invite the Pizzacountry
+	focus = {
+		id = BAV_invite_the_pizzacountry
+		icon = GFX_focus_befriend_italy
+		x = 6
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_swiss_membership }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 5
+		}
+				completion_reward = {
+		ITA = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Belgian Membership
+	focus = {
+		id = BAV_belgian_membership
+		icon = GFX_focus_generic_support_the_left_right
+		x = 2
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_western_expansion }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 5
+		}
+				completion_reward = {
+		BEL = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Invite the Devil to the Treaty
+	focus = {
+		id = BAV_invite_the_devil_to_the_treaty
+		icon = GFX_focus_chi_mission_to_germany
+		x = 5
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_belgian_membership 
+		}
+		prerequisite = { 
+			focus = BAV_yugoslavian_memberschip 
+		}
+		prerequisite = { 
+			focus = BAV_hungarian_invite 
+		}
+		prerequisite = { 
+			focus = BAV_invite_the_pizzacountry 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 4
+		}
+				completion_reward = {
+		GER = {country_event = {days = 1 id = bav.1}}
+		}
+	}
+
+	#Focus for Rework the Bavarian Railways
+	focus = {
+		id = BAV_rework_the_bavarian_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_focus_on_the_civilian_industry }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			53 = { add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+}
+54 = { add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+}
+52 = { add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+}
+		}
+	}
+
+	#Focus for Researches in Franken
+	focus = {
+		id = BAV_researches_in_franken
+		icon = GFX_goal_generic_oil_refinery
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_focus_on_the_civilian_industry }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_resource= { 
+type = oil 
+amount = 12 
+state = 54 
+}
+		}
+	}
+
+	#Focus for Discover the Steel in Niederbayern
+	focus = {
+		id = BAV_discover_the_steel_in_niederbayern
+		icon = GFX_focus_generic_steel
+		x = 3
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_researches_in_franken }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_resource= { 
+type = steel
+amount = 69
+state = 53 
+}
+		}
+	}
+
+	#Focus for Rework the Factories of Oberbayern
+	focus = {
+		id = BAV_rework_the_factories_of_oberbayern
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_rework_the_bavarian_railways }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			52 = { add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}
+add_building_construction = {
+	type = arms_factory
+	level = 2
+	instant_build = yes
+}}
+		}
+	}
+
+	#Focus for The European Market Congress
+	focus = {
+		id = BAV_the_european_market_congress
+		icon = GFX_focus_usa_focus_on_europe
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_the_aluminium_mines_of_oberbayern 
+		}
+		prerequisite = { 
+			focus = BAV_the_tungsten_discovery_of_niederbayern 
+		}
+		prerequisite = { 
+			focus = BAV_discover_the_steel_in_niederbayern 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+		add_ideas = bav_european_market
+		
+		}
+	}
+
+	#Focus for The Aluminium Mines of Oberbayern
+	focus = {
+		id = BAV_the_aluminium_mines_of_oberbayern
+		icon = GFX_focus_generic_aluminum
+		x = 7
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_researches_in_franken }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_resource= { 
+type = aluminium
+amount = 8 
+state = 52 
+}
+		}
+	}
+
+	#Focus for The Tungsten Discovery of Niederbayern
+	focus = {
+		id = BAV_the_tungsten_discovery_of_niederbayern
+		icon = GFX_focus_generic_tungsten
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_researches_in_franken }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource= { 
+type = tungsten
+amount = 8 
+state = 53 
+}
+		}
+	}
+
+	#Focus for Tactial Efforts
+	focus = {
+		id = BAV_tactial_efforts
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_fortify_the_german_borders }
+		mutually_exclusive = { focus = BAV_firepower_kills }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {			
+		add_tech_bonus = {
+				name = BAV_tactial_efforts
+				bonus = 0.5
+				uses = 3
+				category = land_doctrine
+			}
+		}
+	}
+
+	#Focus for Develop in Niederbayern
+	focus = {
+		id = BAV_develop_in_niederbayern
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_rework_the_factories_of_oberbayern }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			53 = { add_extra_state_shared_building_slots = 2
+add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}}
+		}
+	}
+		#Focus for Rework Franken
+	focus = {
+		id = BAV_rework_franken
+		icon = GFX_focus_generic_industry_3
+		x = 0
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_develop_in_niederbayern }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			54 = { add_extra_state_shared_building_slots = 2
+add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}
+
+		}
+	}
+	}
+
+	#Focus for Large Army
+	focus = {
+		id = BAV_large_army
+		icon = GFX_goal_generic_special_forces
+		x = 19
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_develope_the_bavarian_army }
+		mutually_exclusive = { focus = BAV_skilled_army }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+		add_ideas = bav_large_army
+		}
+	}
+
+	#Focus for Skilled Army
+	focus = {
+		id = BAV_skilled_army
+		icon = GFX_goal_continuous_suppression
+		x = 23
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_develope_the_bavarian_army }
+		mutually_exclusive = { focus = BAV_large_army }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = bav_skilled_army
+		
+	}
+	}
+
+	#Focus for Artillery Effort
+	focus = {
+		id = BAV_artillery_effort
+		icon = GFX_goal_generic_army_artillery2
+		x = 11
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_firepower_kills }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+			name = artillery_bonus
+			bonus = 0.5
+			ahead_reduction = 1
+			uses = 3
+			category = artillery
+			}
+		}
+	}
+
+	#Focus for Trench Effort
+	focus = {
+		id = BAV_trench_effort
+		icon = GFX_goal_generic_construction2
+		x = 15
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_tactial_efforts }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = bav_entrenchment_effort
+		}
+	}
+
+	#Focus for Combines Arms
+	focus = {
+		id = BAV_combines_arms
+		icon = GFX_focus_generic_combined_arms
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_artillery_effort 
+			focus = BAV_trench_effort 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = bav_combined_army
+		}
+	}
+
+	#Focus for Volkssturm
+	focus = {
+		id = BAV_volkssturm
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 19
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_large_army }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_timed_idea= { 
+				idea = bav_volkssturm
+				days = 75
+			}
+		}
+	}
+
+	#Focus for Invest in our Doctrin
+	focus = {
+		id = BAV_invest_in_our_doctrin
+		icon = GFX_goal_generic_air_doctrine
+		x = 23
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_skilled_army }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {			
+		add_tech_bonus = {
+				name = BAV_invest_in_our_doctrin
+				bonus = 0.5
+				uses = 3
+				category = land_doctrine
+			}
+		}
+	}
+
+
+	#Focus for CAS Dominance in Battel
+	focus = {
+		id = BAV_cas_dominance_in_battel
+		icon = GFX_goal_generic_CAS
+		x = 21
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_volkssturm 
+			focus = BAV_invest_in_our_doctrin 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = bav_cas_effort
+	}
+	}
+
+	#Focus for Army Reform
+	focus = {
+		id = BAV_army_reform
+		icon = GFX_focus_chi_army_reform
+		x = 17
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_cas_dominance_in_battel 
+			focus = BAV_combines_arms 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				name = army_reform
+				bonus = 1.0
+				uses = 1
+				technology = infantry_weapons2	
+				technology = improved_infantry_weapons
+				technology = improved_infantry_weapons_2 
+			}
+		
+	}
+	}
+			#Focus for Open our Political Sphere
+	focus = {
+		id = BAV_open_our_political_sphere
+		icon = GFX_BAV_open_our_political_sphere-135545
+		x = 38
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 200  add_stability= 0.10
+		}
+	}
+
+	#Focus for The National Voting Crisis
+	focus = {
+		id = BAV_the_national_voting_crisis
+		icon = GFX_focus_rom_parties_end
+		x = 38
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_open_our_political_sphere }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		BAV = {country_event = {days = 1 id = bav.2}}
+		
+		}
+	}
+	#Focus for Side with the Democrats
+	focus = {
+		id = BAV_side_with_the_democrats
+		icon = GFX_goal_support_democracy
+		x = 30
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_national_voting_crisis }
+		mutually_exclusive = { 
+			focus = BAV_il_nostro_possedere_duce 
+		}
+		mutually_exclusive = { 
+			focus = BAV_aftermath_of_the_revolution 
+		}
+		mutually_exclusive = { 
+			focus = BAV_the_return_of_bavarian_monarchy 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+					has_country_leader= { 
+ruling_only = yes 
+name = "Friedrich von Papen"
+}
+		}
+		completion_reward = {
+			add_stability= 0.2
+		}
+	}
+#Focus for The Return of Bavarian Monarchy
+	focus = {
+		id = BAV_the_return_of_bavarian_monarchy
+		icon = GFX_focus_generic_monarchy_2
+		x = 36
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_national_voting_crisis }
+		mutually_exclusive = { 
+			focus = BAV_il_nostro_possedere_duce 
+			focus = BAV_aftermath_of_the_revolution 
+			focus = BAV_side_with_the_democrats 
+			focus = BAV_ 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+					has_country_leader= { 
+ruling_only = yes
+name = "Kronprinz Ruprecht von Bayern"
+}
+}
+		completion_reward = {
+			add_country_leader_trait= imperial_connections
+			add_country_leader_trait= staunch_constitutionalist
+			add_country_leader_trait= military_theorist
+		}
+	}
+		#Focus for Aftermath of the Revolution
+	focus = {
+		id = BAV_aftermath_of_the_revolution
+		icon = GFX_focus_focus_fra_revolution_utmost
+		x = 41
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_national_voting_crisis }
+		mutually_exclusive = { 
+			focus = BAV_il_nostro_possedere_duce 
+			focus = BAV_side_with_the_democrats 
+			focus = BAV_the_return_of_bavarian_monarchy 
+			focus = BAV_ 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_government= communism  has_civil_war= no
+		}
+		completion_reward = {
+			add_timed_idea={idea= bav_aftermath_revo days = 60}
+		}
+	}
+
+	#Focus for Il nostro possedere Duce
+	focus = {
+		id = BAV_il_nostro_possedere_duce
+		icon = GFX_goal_support_fascism
+		x = 47
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_national_voting_crisis }
+		mutually_exclusive = { 
+			focus = BAV_aftermath_of_the_revolution 
+			focus = BAV_side_with_the_democrats 
+			focus = BAV_the_return_of_bavarian_monarchy 
+			focus = BAV_ 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+available = {
+			has_country_leader= { 
+ruling_only = yes 
+name = "Claus Schenk Graf von Stauffenberg"
+}
+		}
+		completion_reward = {
+			add_ideas= bav_little_duce
+		}
+	}
+		#Focus for Invest in the Civilian Sector
+	focus = {
+		id = BAV_invest_in_the_civilian_sector
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 30
+		y = 3
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_side_with_the_democrats }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			53 = { add_extra_state_shared_building_slots = 2
+add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}}
+		}
+	}
+
+	#Focus for Open the Bavarian Borders
+	focus = {
+		id = BAV_open_the_bavarian_borders
+		icon = GFX_focus_generic_treaty
+		x = 30
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_invest_in_the_civilian_sector }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_multi_cultural
+		}
+	}
+
+	#Focus for Guarantee Personal Liberty
+	focus = {
+		id = BAV_guarantee_personal_liberty
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 30
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_open_the_bavarian_borders }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {idea = bav_personal_liberty days = 365}
+		}
+	}
+
+	#Focus for Bavarian Patriotism
+	focus = {
+		id = BAV_bavarian_patriotism
+		icon = GFX_focus_mex_soldaderas
+		x = 36
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_return_of_bavarian_monarchy }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_patriotism
+		}
+	}
+
+	#Focus for Tighten Border Restrictions
+	focus = {
+		id = BAV_tighten_border_restrictions
+		icon = GFX_goal_generic_forceful_treaty
+		x = 36
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_bavarian_patriotism }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_border_restrictions
+		}
+	}
+
+	#Focus for Power to the Monarch
+	focus = {
+		id = BAV_power_to_the_monarch
+		icon = GFX_focus_generic_monarchy_1
+		x = 36
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_tighten_border_restrictions }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = bav_monarchism
+		}
+	}
+
+	#Focus for Deterence
+	focus = {
+		id = BAV_deterence
+		icon = GFX_focus_generic_home_defense
+		x = 36
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_power_to_the_monarch }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_deterence
+		}
+	}
+
+	#Focus for Outsider Investments
+	focus = {
+		id = BAV_outsider_investments
+		icon = GFX_focus_mex_privatisation
+		x = 30
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_guarantee_personal_liberty }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_investors
+		}
+	}
+		#Focus for Grant the Workers Rights
+	focus = {
+		id = BAV_grant_the_workers_rights
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 41
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_aftermath_of_the_revolution }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_grant_workers_rights
+		}
+	}
+
+	#Focus for Organize the Trade Unions
+	focus = {
+		id = BAV_organize_the_trade_unions
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 41
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_grant_the_workers_rights }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = bav_grant_workers_rights
+add_idea = bav_expanded_workers_rights
+}
+		}
+	}
+
+	#Focus for Resist the Exploiters
+	focus = {
+		id = BAV_resist_the_exploiters
+		icon = GFX_goal_support_communism
+		x = 41
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_organize_the_trade_unions }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= bav_exploiters
+		}
+	}
+
+	#Focus for Second Industrializationplan
+	focus = {
+		id = BAV_second_industrializationplan
+		icon = GFX_goal_generic_national_unity
+		x = 41
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_resist_the_exploiters }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_completed_focus= BAV_the_bavarian_industry
+		}
+		completion_reward = {
+			add_timed_idea={idea= bav_five_year_plan days = 1825}
+		}
+	}
+
+	#Focus for Create the Bavarian Fascist Youth
+	focus = {
+		id = BAV_create_the_bavarian_fascist_youth
+		icon = GFX_focus_generic_military_academy
+		x = 47
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_il_nostro_possedere_duce }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_fas_youth
+		}
+	}
+
+	#Focus for The Bavarian GESTAPO
+	focus = {
+		id = BAV_the_bavarian_gestapo
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 47
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_create_the_bavarian_fascist_youth }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas=bav_fas_youth
+		}
+	}
+
+	#Focus for Burry the Liberty of the People
+	focus = {
+		id = BAV_burry_the_liberty_of_the_people
+		icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
+		x = 47
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_the_bavarian_gestapo }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_idea = bav_nationalism
+		}
+	}
+
+	#Focus for Sociatel Corporatism
+	focus = {
+		id = BAV_sociatel_corporatism
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+		x = 41
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_politicalized_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_corporatism
+		}
+	}
+
+	#Focus for Paramilitarism
+	focus = {
+		id = BAV_paramilitarism
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 47
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_burry_the_liberty_of_the_people }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_paramil
+		}
+	}
+
+	#Focus for Politicalized Education
+	focus = {
+		id = BAV_politicalized_education
+		icon = GFX_goal_generic_dangerous_deal
+		x = 44
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_paramilitarism 
+			focus = BAV_second_industrializationplan 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot= 1  add_war_support= 0.1  add_stability= 0.05
+		}
+	}
+
+	#Focus for Build an Bavarian Army
+	focus = {
+		id = BAV_build_an_bavarian_army
+		icon = GFX_goal_generic_army_tanks
+		x = 43
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_politicalized_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_national_army
+		}
+	}
+
+	#Focus for Political Commisars
+	focus = {
+		id = BAV_political_commisars
+		icon = GFX_focus_smiling_buddha
+		x = 45
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_politicalized_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_pol_commisars 
+		}
+	}
+
+	#Focus for Wartime Act of Bavaria
+	focus = {
+		id = BAV_wartime_act_of_bavaria
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 47
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_politicalized_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war= yes
+		}
+		completion_reward = {
+			add_ideas = bav_reserves
+			add_timed_idea= { idea = bav_war_act days = 120}
+		}
+	}
+	
+	#Focus for Unification with Austria
+	focus = {
+		id = BAV_unification_with_austria
+		icon = GFX_goal_anschluss
+		x = 39
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_the_one_and_only_good_republic_in_europe 
+			focus = BAV_ideological_fanaticism 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_core= 153  add_state_core= 152  add_state_core= 4
+		}
+	}
+
+	#Focus for Demand Referendum
+	focus = {
+		id = BAV_demand_referendum
+		icon = GFX_goal_generic_forceful_treaty
+		x = 39
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_unification_with_austria }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			AUS = {country_event = {days = 1 id = bav.5} }
+		}
+	}
+
+	#Focus for Ideological Fanaticism
+	focus = {
+		id = BAV_ideological_fanaticism
+		icon = GFX_focus_hol_war_on_pacifism
+		x = 44
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_wartime_act_of_bavaria 
+			focus = BAV_political_commisars 
+			focus = BAV_build_an_bavarian_army 
+			focus = BAV_sociatel_corporatism 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_rule= { 
+can_create_factions = yes 
+}
+		}
+	}
+		#Focus for The one and only good Republic in Europe
+	focus = {
+		id = BAV_the_one_and_only_good_republic_in_europe
+		icon = GFX_goal_generic_demand_territory
+		x = 33
+		y = 9
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_issue_industrial_subsides 
+			focus = BAV_land_of_opportunitys 
+			focus = BAV_mobilize_our_resevers 
+			focus = BAV_emergency_powers 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction= "Federativ Democratic States of Europe"
+			add_ideas = bav_only_republic
+		
+	}
+	}
+
+	#Focus for Pragmatic Education
+	focus = {
+		id = BAV_pragmatic_education
+		icon = GFX_goal_generic_scientific_exchange
+		x = 33
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = BAV_outsider_investments 
+			focus = BAV_deterence 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot= 1
+		}
+	}
+
+	#Focus for Emergency Powers
+	focus = {
+		id = BAV_emergency_powers
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 30
+		y = 8
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_pragmatic_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war= yes
+		}
+		completion_reward = {
+			add_ideas = bav_emergency_powers
+		}
+	}
+
+	#Focus for Mobilize our Resevers
+	focus = {
+		id = BAV_mobilize_our_resevers
+		icon = GFX_goal_generic_secret_weapon
+		x = 32
+		y = 8
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_pragmatic_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war= yes
+		}
+		completion_reward = {
+			add_ideas = bav_reserves
+		}
+	}
+
+	#Focus for Land of Opportunitys
+	focus = {
+		id = BAV_land_of_opportunitys
+		icon = GFX_goal_generic_national_unity
+		x = 34
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_pragmatic_education }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = bav_opertunity_land
+		}
+	}
+
+	#Focus for Issue Industrial Subsides
+	focus = {
+		id = BAV_issue_industrial_subsides
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 36
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = BAV_pragmatic_education }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+						54 = { add_extra_state_shared_building_slots = 2
+add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}
+}
+		
+	}
+
+	
+
+
+
+#End of focuses 
+ }
+ }
+ 

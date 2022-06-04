@@ -1,0 +1,397 @@
+ideas = {
+	country = {
+
+		bav_reingnited_the_economy = {
+			ledger = army
+			picture = generic_flexible_foreign_policy2
+			modifier = {
+				production_speed_buildings_factor = 0.4
+			}
+		}
+
+		bav_focus_on_civ = {
+			ledger = army
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+							production_speed_industrial_complex_factor = 0.3
+							production_speed_infrastructure_factor = 0.2
+							production_speed_synthetic_refinery_factor = 0.2
+			}
+		}
+		bav_focus_on_mil = {
+			ledger = army
+			picture = generic_artillery_regiments
+			modifier = {
+							production_speed_arms_factory_factor = 0.3
+							production_speed_rocket_site_factor = 0.3
+							production_speed_dockyard_factor = 0.3
+			}
+		}
+		bav_firepower_kills = {
+			ledger = army
+			picture = tfv_can_conscription_crisis
+			modifier = {
+			army_artillery_defence_factor = 0.3
+			}
+		}
+		bav_develop_army = {
+			ledger = army
+			picture = generic_acquire_tanks
+			modifier = {
+			experience_gain_army_factor = 0.1
+			max_planning = 0.2
+			planning_speed = 0.15
+			training_time_factor = -0.17
+			supply_consumption_factor = -0.2
+			}
+		}
+		bav_defense_war = {
+			ledger = army
+			picture = YUG_federal_defense_council
+			modifier = {
+			army_leader_start_defense_level = 3
+			army_core_defence_factor = 0.2
+			}
+		}
+		bav_offense_war = {
+			ledger = army
+			picture = FRA_army_of_aggression_focus
+			modifier = {
+			army_leader_start_attack_level = 4
+			army_core_attack_factor = 0.2
+			}
+		}
+		bav_european_market = {
+			ledger = army
+			picture = gre_schachtplan3
+			modifier = {
+			trade_opinion_factor = 0.3
+			production_speed_industrial_complex_factor = 0.2
+			production_speed_infrastructure_factor = 0.2
+			production_speed_synthetic_refinery_factor = 0.3
+			local_resources_factor = 0.4
+			}
+		}
+		bav_large_army = {
+			ledger = army
+			picture = tfv_can_conscription_crisis
+			modifier = {
+			monthly_population = 0.08
+			conscription_factor = 0.05
+			}
+		}
+		bav_skilled_army = {
+			ledger = army
+			picture = generic_manpower_bonus
+			modifier = {
+			army_org_factor = 0.10
+			breakthrough_factor = 0.10
+			recon_factor = 0.2
+			recon_factor_while_entrenched = 0.2
+			}
+		}
+		bav_little_duce = {
+			ledger = army
+			picture = ast_abandon_the_westminster_system_fascism
+			modifier = {
+			stability_weekly = 0.02
+			war_support_factor = 0.2
+			lend_lease_tension = -0.1
+			weekly_manpower = 500
+			}
+		}
+		bav_entrenchment_effort = {
+			ledger = army
+			picture = ast_all_in
+			modifier = {
+			dig_in_speed_factor = 0.3
+			winter_attrition_factor = -0.2
+			}
+		}
+		bav_combined_army = {
+			ledger = army
+			picture = combined_bomber_offensive
+			modifier = {
+			skill_bonus_factor = 0.3
+			river_crossing_factor = -0.3
+			wounded_chance_factor = -0.2
+			}
+		}
+		bav_volkssturm = {
+			ledger = army
+			picture = eng_imperial_conscription
+			modifier = {
+			monthly_population = 0.1
+			conscription_factor = 0.1
+			}
+		}
+		bav_cas_effort = {
+			ledger = army
+			picture = air_war_plans_division_focus
+			modifier = {
+			air_cas_efficiency = 0.23
+			air_cas_present_factor = 0.1
+			}
+		}
+		bav_aftermath_revo = {
+			ledger = army
+			picture = eng_for_the_good_of_the_revolution
+			modifier = {
+			production_speed_industrial_complex_factor = -0.3
+			production_speed_infrastructure_factor = -0.2
+			production_speed_synthetic_refinery_factor = -0.3
+			local_resources_factor = -0.3
+			stability_weekly = -0.03
+			}
+		}
+		bav_multi_cultural = {
+			ledger = army
+			picture = neutrality_idea
+			modifier = {
+			weekly_manpower = 750
+			stability_factor = -0.1
+			}
+		}
+		bav_personal_liberty = {
+			ledger = army
+			picture = can_defence_of_canada_regulations_democratic
+			modifier = {
+			stability_weekly = 0.03
+			
+			}
+		}
+		bav_patriotism = {
+			ledger = army
+			picture = generic_infantry_bonus
+			modifier = {
+			conscription_factor = 0.10
+			war_support_weekly = 0.03
+			}
+		}
+		bav_border_restrictions= {
+			ledger = army
+			picture = generic_fortify_the_borders
+			modifier = {
+			research_speed_factor = 0.1
+			civilian_intel_to_others = -0.1
+			}
+		}
+		bav_monarchism= {
+			ledger = army
+			picture = bra_monarchist_uprising
+			modifier = {
+			conscription_factor = 0.02
+			}
+		}
+		bav_deterence= {
+			ledger = army
+			picture = YUG_federal_defense_council
+			modifier = {
+			production_speed_anti_air_building_factor = 0.1
+			production_speed_bunker_factor = 0.1
+			production_speed_coastal_bunker_factor = 0.1
+				}
+			
+		}
+		bav_investors= {
+			ledger = army
+			picture = LIT_invested_in_farms
+			modifier = {
+			production_speed_industrial_complex_factor = 0.15
+			production_speed_infrastructure_factor = 0.15
+				}
+			
+		}
+		bav_emergency_powers= {
+			ledger = army
+			picture = generic_army_war_college
+			modifier = {
+			political_power_gain = 0.05
+			join_faction_tension = -0.25
+			
+				}
+			
+		}
+		bav_reserves= {
+			ledger = army
+			picture = generic_reserve_divisions
+			modifier = {
+			mobilization_speed = 0.5
+		 conscription_factor = 0.05
+			
+				}
+			
+		}
+		bav_opertunity_land= {
+			ledger = army
+			picture = generic_research_bonus
+			modifier = {
+			stability_factor = 0.1
+			weekly_manpower = 750
+			
+				}
+			
+		}
+		bav_only_republic= {
+			ledger = army
+			picture = EST_republican_defence_league
+			modifier = {
+			defensive_war_stability_factor = 0.2
+			war_stability_factor = 0.1
+			
+				}
+			
+		}
+		bav_shortly_released= {
+			ledger = army
+			picture = POL_disjointed_industry
+			modifier = {
+			production_speed_industrial_complex_factor = -0.2
+			production_speed_arms_factory_factor = -0.2
+			stability_factor = -0.4
+			
+				}
+			
+		}
+		bav_grant_workers_rights= {
+			ledger = army
+			picture = por_iberian_workers_united
+			modifier = {
+			production_speed_industrial_complex_factor = 0.1
+			production_speed_arms_factory_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.3
+				}
+			
+		}
+		bav_expanded_workers_rights= {
+			ledger = army
+			picture = generic_agrarian_reform
+			modifier = {
+			production_speed_industrial_complex_factor = 0.15
+			production_speed_arms_factory_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.3
+				}
+			
+		}
+		bav_exploiters= {
+			ledger = army
+			picture = generic_democratic_reformer_eastern_european_2d
+			modifier = {
+			occupation_cost = -0.25
+			airforce_intel_to_others = -10
+			civilian_intel_to_others = -10
+			navy_intel_to_others = -10
+			operation_risk = -0.1
+				}
+			}
+		bav_five_year_plan= {
+			ledger = army
+			picture = SOV_fourth_five_year_plan
+			modifier = {
+			production_speed_industrial_complex_factor = 0.15
+			production_speed_arms_factory_factor = 0.15
+			production_factory_efficiency_gain_factor = -0.2
+				}
+			
+		}
+		bav_fas_youth= {
+			ledger = army
+			picture = generic_fascism_drift_bonus
+			modifier = {
+			conscription_factor = 0.05
+			mobilization_speed = 0.15
+				}
+			
+		}
+		bav_nationalism= {
+			ledger = army
+			picture = FRA_national_mobilization_focus
+			modifier = {
+			stability_factor = 0.1
+			join_faction_tension = -0.1
+			war_support_weekly = 0.03
+				}
+			
+		}
+		bav_corporatism= {
+			ledger = army
+			picture = saf_ossewabrandwag_2
+			modifier = {
+			production_factory_efficiency_gain_factor = 0.1
+			production_speed_anti_air_building_factor = 0.2
+			political_power_gain = 0.03
+				}
+			
+		}
+		bav_paramil= {
+			ledger = army
+			picture = SOV_third_five_year_plan_military
+			modifier = {
+			mobilization_speed = 0.05
+			planning_speed = 0.05
+			justify_war_goal_time = -0.2
+				}
+			
+		}
+		bav_national_army= {
+			ledger = army
+			picture = FRA_army_of_aggression_focus
+			modifier = {
+			dig_in_speed_factor = 0.1
+			army_core_attack_factor = 0.2
+			army_core_defence_factor = 0.2
+				}
+			
+		}
+		bav_pol_commisars= {
+			ledger = army
+			picture = generic_communist_army
+			modifier = {
+			subjects_autonomy_gain = -0.2
+			resistance_growth_on_our_occupied_states = 0.5
+				}
+			
+		}
+		bav_war_act= {
+			ledger = army
+			picture = por_volunteers_in_the_war2
+			modifier = {
+			planning_speed = 0.1
+			equipment_conversion_speed = 0.5 
+			conversion_cost_civ_to_mil_factor = -0.4
+				}
+			
+		}
+		bav_unstable_democracy= {
+			ledger = army
+			picture = generic_disjointed_gov
+			modifier = {
+			stability_factor = -0.2
+			surrender_limit = -0.2
+			conversion_cost_civ_to_mil_factor = 0.4
+				}
+			
+		}
+		bav_const_monarchy= {
+			ledger = army
+			picture = HUN_hungarian_monarchy_democratic
+			modifier = {
+			stability_factor = 0.1
+democratic_acceptance = 50
+neutrality_acceptance = 50
+				}
+			
+		}
+	bav_eco_mil_unification= {
+			ledger = army
+			picture = great_depression
+			modifier = {
+			production_speed_buildings_factor = -0.3
+			mobilization_speed = -0.8
+			planning_speed = -0.25
+			production_factory_efficiency_gain_factor = -0.4
+				}
+			
+		}
+	}
+}

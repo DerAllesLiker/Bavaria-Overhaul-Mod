@@ -1,0 +1,95 @@
+ideas = {
+	political_advisor = {
+	}
+
+	#Military
+	army_chief = {
+		sebastian_tller = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {organizer}
+			picture = /media/get//hoi4/ideas/people/idea_por_jose_norton_de_matos
+		}
+		hubert_schrller = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {military_theorist}
+			picture = /media/get//hoi4/ideas/people/idea_minoru_genda
+		}
+	}
+	navy_chief = {
+		lukas_mller = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {raiding_fleet_naval_manufacturer}
+			picture = /media/get//hoi4/ideas/people/idea_generic_political_advisor_south_america_3
+		}
+	}
+	air_chief = {
+		helena_von_waltersleben = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {dive_bomber}
+			picture = /media/get//hoi4/ideas/people/idea_generic_political_advisor_female_europe
+		}
+	}
+	high_command = {
+		armin_laschet = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {blitzkrieg_theorist}
+			picture = /media/get//hoi4/ideas/people/idea_generic_political_advisor_europe_1
+		}
+		hjalmar_schacht = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {logistics_wizard}
+			picture = /media/get//hoi4/ideas/people/idea_hjalmar_schacht
+		}
+		georg_sibert = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {heavy_aircraft_manufacturer}
+			picture = /media/get//hoi4/ideas/people/idea_george_patton
+		}
+	}
+	#Manufacturers
+	tank_manufacturer = {
+	}
+	naval_manufacturer = {
+	}
+	aircraft_manufacturer = {
+	}
+	materiel_manufacturer = {
+	}
+	theorist = {
+		erik_heising = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {nuclear_scientist}
+			picture = /media/get//hoi4/ideas/people/idea_soviet_vsevolod_merkulov
+		}
+		frederik_maier = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {rocket_scientist}
+			picture = /media/get//hoi4/ideas/people/idea_stepan_krasovsky
+		}
+		otto_uder = {
+			allowed = {
+				original_tag = BAV
+			}
+			traits = {inflexible_strategist}
+			picture = /media/get//hoi4/ideas/people/idea_yoshitoshi_tokugawa
+		}
+	}
+}

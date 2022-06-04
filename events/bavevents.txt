@@ -1,0 +1,163 @@
+add_namespace = bav
+
+##Event: Bavaria invites us to the European Market Congress
+country_event = {
+	id = bav.1
+	title = "Bavaria invites us to the European Market Congress"
+	desc = "Today the Bavarian Government came to us and offerd us to join the \"European Market Congress\". They said it serves for better relation between our countries and bring them closer together"
+	picture = GFX_report_event_saf_coup
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 0
+	}
+	option = {
+		name = "Hell ya, we should bring europe closer"
+		ai_chance = { factor = 3}
+		add_ideas= bav_european_market  
+	}
+	option = {
+		name = "It sounds suspicous, we should not join them"
+		ai_chance = { factor = 1}
+		add_opinion_modifier = { target = BAV modifier = medium_decrease }
+	}
+}
+##Event: Bavarian Voting Crisis
+country_event = {
+	id = bav.2
+	title = "Bavarian Voting Crisis"
+	desc = "After the seconnd election this month our parliament got dissolved. This is the biggest crisis since the 1929 Economy crisis in the Bavarian History. We should wait and see what the future brings us"
+	picture = GFX_report_event_spr_carlists
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = "This is a really unstable Situation"
+		ai_chance = { factor = 1}
+		retire_country_leader = yes
+create_country_leader = {
+name = "Fallen Government of Bavaria"
+desc = "BAV_fed_council_desc"
+picture = "portrait_eng_fallen_government.dds"
+ideology = liberalism
+expire = "1965.1.1"
+traits = {
+}
+}
+
+BAV = {country_event = {days = 7 id = bav.3}}
+
+	}
+}
+##Event: New Parliament
+country_event = {
+	id = bav.3
+	title = "Time to elect a new Parliament"
+	desc = "After the Dissolvation of our Parliament we need to elect a new Government"
+	picture = GFX_decision_cat_picture_1936_election
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = "Side with the Democrats"
+		ai_chance = { factor = 2}	
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Friedrich von Papen"
+			desc = "BAV_fed_council_desc"
+			picture = "portrait_lat_vilis_lacis.dds"
+			ideology = conservatism
+			expire = "1965.1.1"
+			traits = {
+		}
+		remove_ideas = bav_unstable_democracy
+	}
+	}
+	option = {
+		name = "Trust in the King"
+		ai_chance = {factor = 3}
+		set_politics = {
+		ruling_party = neutrality
+		elections_allowed = no
+		}
+		remove_ideas = bav_unstable_democracy
+		remove_ideas = bav_const_monarchy
+	}
+	option = {
+		name = "Our own little Revolution"
+		ai_chance = {factor = 1}
+		BAV = {country_event = {days = 1 id = bav.4}}
+		remove_ideas = bav_unstable_democracy
+		} 
+		
+	option = {
+		name = "Il nostro possedere Duce"
+		ai_chance = {factor = 2}
+		set_politics = {
+		ruling_party = fascism
+		elections_allowed = no
+		}
+		remove_ideas = bav_unstable_democracy
+	}
+	
+}
+		
+##Event: Little Revolution
+country_event = {
+	id = bav.4
+	title = "Our Revolution"
+	desc = "After siding with the Communists, some parts of our country didnt like our descision"
+	picture = GFX_report_event_spr_carlists
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 5
+	}
+	option = {
+		name = "GLORY TO OUR REVOLUTION"
+		ai_chance = { factor = 1}
+		
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		start_civil_war = {
+	ideology = democratic
+	size = 0.1
+}
+	}
+}
+##Event: Bavaria Demands Unificaton
+country_event = {
+	id = bav.5
+	title = "Bavaria Demands Unification"
+	desc = "Today the Bavarian Ambassador recieved a message from the Bavarian Government, which he immidiatly gave to our President. This Message contained a referendum to unify with Bavaria. How shall we respond"
+	picture = GFX_report_event_spr_franco_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = "Cave to them and unite"
+		ai_chance = { factor = 3}
+		BAV = {annex_country= {
+ target = AUS 
+}
+add_timed_idea={idea = bav_eco_mil_unification days = 60}
+   }
+	}
+	option = {
+		name = "Decline their offer"
+		ai_chance = { factor = 2}
+		BAV = {create_wargoal= { 
+type = annex_everything 
+target = AUS
+}
+   }
+	}
+}
